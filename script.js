@@ -1,19 +1,24 @@
   // URL of the YAML file on GitHub
   const yamlFileUrl = 'https://raw.githubusercontent.com/tpcav/my-website/main/.github/workflows/hello.world.yaml';
 
-  // Element where you want to display the data
-  const yamlDataElement = document.getElementById('yamlData');
+ // Element where you want to display the HTML code
+ const yamlCodeElement = document.getElementById('yamlCode');
 
-  // Fetch the YAML file
-  fetch(yamlFileUrl)
-    .then((response) => response.text())
-    .then((yamlText) => {
-      // Parse the YAML data
-      const yamlData = jsyaml.safeLoad(yamlText);
+ // Fetch the YAML file
+ fetch(yamlFileUrl)
+     .then((response) => response.text())
+     .then((yamlText) => {
+         // Parse the YAML data
+         const yamlData = jsyaml.load(yamlText);
 
-      // Display the YAML data in the HTML element
-      yamlDataElement.textContent = JSON.stringify(yamlData, null, 2);
-    })
-    .catch((error) => {
-      console.error('Error fetching or parsing YAML:', error);
-    });
+         // Check if the 'code' key exists in the YAML data
+         if (yamlData.hasOwnProperty('code')) {
+             // Display the 'code' property value in the HTML element as text
+             yamlCodeElement.textContent = yamlData.code;
+         } else {
+             yamlCodeElement.textContent = 'Code not found in YAML data';
+         }
+     })
+     .catch((error) => {
+         console.error('Error fetching or parsing YAML:', error);
+     });
