@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        description: "Tom Cav"
+        description: "Your name."
         required: true
         default: "warning"
 
