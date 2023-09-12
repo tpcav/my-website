@@ -9,9 +9,11 @@ on:
   workflow_dispatch:
     inputs:
       code:
+        name: ""
         description: "Your name."
         required: true
         default: "John Joe"
+
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -27,4 +29,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo "Hello, ${ inputs.code }!"
+        run: echo "Hello, ${ inputs.code.name }!"
