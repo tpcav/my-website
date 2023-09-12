@@ -1,13 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Access the 'name' input value from the URL query parameters
-  const urlParams = new URLSearchParams(window.location.search);
-  const name = urlParams.get("name");
+  // Fetch the YAML content from an external source (e.g., GitHub raw content)
+  fetch('https://raw.githubusercontent.com/tpcav/my-website/main/.github/workflows/hello.world.yaml')
+      .then(response => response.text())
+      .then(yamlText => {
+          // Parse the YAML content using js-yaml
+          const yamlData = jsyaml.safeLoad(yamlText);
 
-  // Get the HTML element where you want to display the name
-  const nameDisplayElement = document.getElementById("nameDisplay");
+          // Access and display specific data from the YAML, e.g., inputs.name
+          const name = yamlData.on.workflow_dispatch.inputs.name;
 
-  if (nameDisplayElement) {
-      // Update the content of the element with the name value
-      nameDisplayElement.textContent = name;
-  }
+          // Get the HTML element where you want to display the name
+          const nameDisplayElement = document.getElementById("nameDisplay");
+
+          if (nameDisplayElement) {
+              // Update the content of the element with the name value
+              nameDisplayElement.textContent = name;
+          }
+      })
+      .catch(error => {
+          console.error('Error fetching or parsing YAML:', error);
+      });
 });
