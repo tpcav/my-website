@@ -1,11 +1,6 @@
-# .github/workflows/hello-world.yml
-# This is a basic workflow to help you get started with Actions
+name: Generate HTML with Name
 
-name: Hello, world!
-
-# Controls when the workflow will run
 on:
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
       name:
@@ -13,21 +8,21 @@ on:
         required: true
         default: "warning"
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  generate_html:
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - name: Create HTML file with name
+        run: |
+          echo "<html><body><h1>Hello, <span id=\"namePlaceholder\"></span>!</h1></body></html>" > index.html
+          echo "<script>" >> index.html
+          echo "document.getElementById('namePlaceholder').textContent = '${{ inputs.name }}';" >> index.html
+          echo "</script>" >> index.html
+        continue-on-error: true
 
-      # Runs a single command using the runners shell
-      - name: Extract Name
-        run: echo "::set-env name=NAME::${{ inputs.name }}"
-
-      - name: Save Name to a file
-        run: echo $NAME > name.txt
+      - name: Upload HTML artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-html-artifact
+          path: index.html
