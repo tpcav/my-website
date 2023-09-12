@@ -17,17 +17,17 @@ fetch(yamlFileUrl)
             // Parse the YAML data
             const yamlData = jsyaml.load(yamlText);
 
-            // Check if the 'name' key exists in the YAML data
-            if (yamlData && yamlData.code) {
-                // Create an <h1> element and set its text content to the 'name' property value
-                const nameElement = document.createElement('h1');
-                nameElement.innerHTML = yamlData.code;
-                
+            // Check if the 'inputs' object exists in the YAML data and has a 'code' property
+            if (yamlData && yamlData.inputs && yamlData.inputs.code) {
+                // Create an <h1> element and set its text content to the 'code' property value
+                const h1Element = document.createElement('h1');
+                h1Element.textContent = yamlData.inputs.code;
+
                 // Append the <h1> element to the yamlCodeElement
-                yamlCodeElement.appendChild(nameElement);
+                yamlCodeElement.appendChild(h1Element);
             } else {
-                // Display an error message if 'name' key is not found
-                yamlCodeElement.textContent = 'Name not found in YAML data';
+                // Display an error message if 'inputs.code' is not found in YAML data
+                yamlCodeElement.textContent = 'Code not found in YAML data';
             }
         } catch (error) {
             console.error('Error parsing YAML:', error);
