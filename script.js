@@ -22,7 +22,7 @@ async function fetchAndParseYAML(url) {
 }
 
 // Element where you want to display the YAML content
-const yamlCodeElement = document.getElementById('yamlCode');
+const yamlCodeElement = document.getElementById('namePlaceholder');
 
 // URL of the YAML file on GitHub
 const yamlFileUrl =
