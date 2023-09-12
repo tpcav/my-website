@@ -1,6 +1,11 @@
+# .github/workflows/hello-world.yml
+# This is a basic workflow to help you get started with Actions
+
 name: Hello, world!
 
+# Controls when the workflow will run
 on:
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
       name:
@@ -8,21 +13,18 @@ on:
         required: true
         default: "warning"
 
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  # This workflow contains a single job called "build"
   build:
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Create an HTML file with the name input value
-      - name: Create HTML file
-        run: echo "<html><body><div id='nameDisplay'>${{ github.event.inputs.name }}</div></body></html>" > index.html
-
-      # Commit the HTML file back to the repository
-      - name: Commit and push changes
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add index.html
-          git commit -m "Add name to index.html"
-          git push
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo "${{ inputs.name }}!"
