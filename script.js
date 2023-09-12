@@ -10,22 +10,15 @@ async function fetchAndParseYAML(url) {
     const yamlText = await response.text();
     const yamlData = jsyaml.load(yamlText);
 
-    if (!yamlData || !yamlData.inputs || !yamlData.inputs.code) {
-      throw new Error('Code not found in YAML data');
+    if (!yamlData || !yamlData.inputs || !yamlData.inputs.name) {  // Update to 'name'
+      throw new Error('Name not found in YAML data');  // Update the error message
     }
 
-    return yamlData.inputs.code;
+    return yamlData.inputs.name;  // Update to 'name'
   } catch (error) {
     console.error('Error:', error);
     throw error;
   }
-}
-
-// Function to display code in an element
-function displayCodeInElement(code, element) {
-  const h1Element = document.createElement('h1');
-  h1Element.textContent = code;
-  element.appendChild(h1Element);
 }
 
 // Element where you want to display the YAML content
@@ -37,8 +30,8 @@ const yamlFileUrl =
 
 // Fetch and display the YAML code
 fetchAndParseYAML(yamlFileUrl)
-  .then((code) => {
-    displayCodeInElement(code, yamlCodeElement);
+  .then((name) => {  // Update to 'name'
+    displayCodeInElement(name, yamlCodeElement);  // Update to 'name'
   })
   .catch((error) => {
     yamlCodeElement.textContent = `Error: ${error.message}`;
