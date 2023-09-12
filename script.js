@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(response => response.text())
       .then(yamlText => {
           // Parse the YAML content using js-yaml
-          const yamlData = jsyaml.safeLoad(yamlText);
+          const yamlData = jsyaml.load(yamlText);
 
           // Access and display specific data from the YAML, e.g., inputs.name
           const name = yamlData.on.workflow_dispatch.inputs.name;
