@@ -1,8 +1,8 @@
-  // URL of the YAML file on GitHub
-  const yamlFileUrl = 'https://raw.githubusercontent.com/tpcav/my-website/main/.github/workflows/hello.world.yaml';
+// URL of the YAML file on GitHub
+const yamlFileUrl = 'https://raw.githubusercontent.com/tpcav/my-website/main/.github/workflows/hello.world.yaml';
 
- // Element where you want to display the HTML code
- const yamlCodeElement = document.getElementById('yamlCode');
+// Element where you want to display the YAML content
+const yamlCodeElement = document.getElementById('yamlCode');
 
 // Fetch the YAML file
 fetch(yamlFileUrl)
@@ -17,14 +17,17 @@ fetch(yamlFileUrl)
             // Parse the YAML data
             const yamlData = jsyaml.load(yamlText);
 
-            // Check if the 'inputs' key exists in the YAML data
-            if (yamlData && yamlData.hasOwnProperty('inputs') && yamlData.inputs.hasOwnProperty('code')) {
-                const htmlCode = yamlData.inputs.code;
-
-                // Set the innerHTML of the yamlCodeElement to the HTML code
-                yamlCodeElement.innerHTML = htmlCode;
+            // Check if the 'name' key exists in the YAML data
+            if (yamlData && yamlData.name) {
+                // Create an <h1> element and set its text content to the 'name' property value
+                const nameElement = document.createElement('h1');
+                nameElement.innerHTML = yamlData.name;
+                
+                // Append the <h1> element to the yamlCodeElement
+                yamlCodeElement.appendChild(nameElement);
             } else {
-                yamlCodeElement.textContent = 'Code not found in YAML data';
+                // Display an error message if 'name' key is not found
+                yamlCodeElement.textContent = 'Name not found in YAML data';
             }
         } catch (error) {
             console.error('Error parsing YAML:', error);
