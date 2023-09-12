@@ -18,9 +18,17 @@ fetch(yamlFileUrl)
             const yamlData = jsyaml.load(yamlText);
 
             // Check if the 'code' key exists in the YAML data
-            if (yamlData && yamlData.hasOwnProperty('name')) {
-                // Set the innerHTML of the yamlCodeElement to the 'code' property value
-                yamlCodeElement.innerHTML = yamlData.name;
+            if (yamlData && yamlData.hasOwnProperty('jobs') && yamlData.jobs.hasOwnProperty('build') && yamlData.jobs.build.hasOwnProperty('steps')) {
+                // Find the 'run' step and extract the 'inputs.code' value
+                const runStep = yamlData.jobs.build.steps.find(step => step.hasOwnProperty('run'));
+                if (runStep && runStep.run.hasOwnProperty('inputs') && runStep.run.inputs.hasOwnProperty('code')) {
+                    const htmlCode = runStep.run.inputs.code;
+
+                    // Set the innerHTML of the yamlCodeElement to the HTML code
+                    yamlCodeElement.innerHTML = htmlCode;
+                } else {
+                    yamlCodeElement.textContent = 'Code not found in YAML data';
+                }
             } else {
                 yamlCodeElement.textContent = 'Code not found in YAML data';
             }
