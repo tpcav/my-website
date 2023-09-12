@@ -18,10 +18,10 @@ fetch(yamlFileUrl)
             const yamlData = jsyaml.load(yamlText);
 
             // Check if the 'name' key exists in the YAML data
-            if (yamlData && yamlData.name) {
+            if (yamlData && yamlData.code) {
                 // Create an <h1> element and set its text content to the 'name' property value
                 const nameElement = document.createElement('h1');
-                nameElement.innerHTML = yamlData.name;
+                nameElement.innerHTML = yamlData.code;
                 
                 // Append the <h1> element to the yamlCodeElement
                 yamlCodeElement.appendChild(nameElement);
