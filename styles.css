@@ -40,6 +40,10 @@ figure{
   font-size: 12pt;
 }
 
+video {
+  width: 40; 
+}
+
 .best-friend {
   float: left;
   width: 40%;
