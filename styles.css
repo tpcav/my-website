@@ -5,6 +5,7 @@ body {font-size: 14pt; padding: 1rem; margin-bottom: 7%; background: #e4e4e4; co
 
 .intro-text {
   text-align: justify;
+  margin-top: 2rem;
 }
 
 h1 {
@@ -61,7 +62,7 @@ a:visited {
 }
 
 .center-iframe {
-  border-radius: 0.60rem;
+  border-radius: 0.50rem;
 }
 
 .center-iframe {
@@ -72,11 +73,11 @@ a:visited {
 }
 
 img {
-  border-radius: 0.60rem;
+  border-radius: 0.50rem;
 }
 
 video {
-  border-radius: 0.60rem;
+  border-radius: 0.50rem;
 }
 
 figcaption {
@@ -84,9 +85,13 @@ figcaption {
   font-size: 12pt;
 }
 
+hr {
+  margin-top: 2rem;
+}
+
 .essay-title {
   line-height: 7px;
-  margin-top: 4rem;
+  margin-top: 3rem;
   margin-bottom: 2rem;
 }
 
