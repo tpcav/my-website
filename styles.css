@@ -13,7 +13,7 @@ h1 {
 }
 
 h2 {
-  font-size: 18pt;
+  font-size: 16pt;
 }
 
 #essay-para {
@@ -89,9 +89,12 @@ hr {
   margin-top: 2rem;
 }
 
+.essay-date {
+  margin-top: -1rem;
+}
+
 .essay-title {
-  line-height: 7px;
-  margin-top: 3rem;
+  margin-top: 2rem;
   margin-bottom: 2.5rem;
 }
 
@@ -100,5 +103,13 @@ hr {
   body {
     margin: 0 auto; /* Center the body horizontally */
     max-width: 40%; /* Set the maximum width to 73% */
+  }
+
+  h1 {
+    font-size: 22pt;
+  }
+  
+  h2 {
+    font-size: 18pt;
   }
 }
