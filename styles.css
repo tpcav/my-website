@@ -15,7 +15,7 @@ h2 {
   font-size: 18pt;
 }
 
-.essay-p {
+#essay-para {
   text-align: justify;
 }
 
@@ -40,13 +40,43 @@ figure {
   text-align: center;
 }
 
-.smosh-gif {
-  margin-bottom: 20px;
-}
-
 a {
   font-style: none;
   text-decoration: none;
+  color: #3366CC ;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #795CB2;
+}
+
+.iframe-style {
+  padding-bottom: 2rem;
+  width: 425px;
+  height: 250px;
+}
+
+.center-iframe {
+  border-radius: 0.60rem;
+}
+
+.center-iframe {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  border-radius: 0.60rem;
+}
+
+video {
+  border-radius: 0.60rem;
 }
 
 figcaption {
