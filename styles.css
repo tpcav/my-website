@@ -31,36 +31,3 @@ li {
     max-width: 40%; /* Set the maximum width to 73% */
   }
 }
-
-figure{
-  width: 50%;
-  float: right;
-  margin: 0 5px 0 20px;
-  font-style: italic;
-  font-size: 12pt;
-
-.ty-tom-reviews {
-  width: 40%;
-}
-
-.best-friend {
-  float: left;
-  width: 40%;
-  margin: 0 20px 0 0;
-  font-size: 12pt;
-}
-
-img {
-  width: 98%;
-  float: right;
-  margin: 0 5px 30px 20px;
-}
-
-video {
-  width:40%;
-}
-
-.ty-mw2 {
-  margin-bottom: 15px;
-  width: 40%;
-}
