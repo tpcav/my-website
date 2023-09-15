@@ -40,7 +40,7 @@ figure{
   font-size: 12pt;
 
 .ty-tom-reviews {
-  width: 90%;
+  width: 40%;
 }
 
 .best-friend {
@@ -54,6 +54,10 @@ img {
   width: 98%;
   float: right;
   margin: 0 5px 30px 20px;
+}
+
+video {
+  width:40%;
 }
 
 .ty-mw2 {
