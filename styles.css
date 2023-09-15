@@ -11,6 +11,10 @@ h1 {
   font-size: 22pt;
 }
 
+.essay-p {
+  text-align: justify;
+}
+
 ul {
   list-style: none;
   padding-left: 1.5rem;
