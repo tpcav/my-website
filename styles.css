@@ -1,4 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-body {margin: auto 5%; margin-top: 5%; margin-bottom: 5%; background: #e4e4e4; color: #444444; font-family: Roboto; line-height: 1.4; text-shadow: 0 1px 0 #ffffff; max-width: 83%;}
+body {padding: 1rem; margin-top: 5%; margin-bottom: 7%; background: #e4e4e4; color: #444444; font-family: Roboto; line-height: 1.4; text-shadow: 0 1px 0 #ffffff;}
 .quote-text {text-indent: 3rem;}
+
+.intro-text {
+  text-align: justify;
+}
+
+ul {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+li {
+  text-align: left;
+}
