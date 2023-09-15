@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-body {font-size: 16pt; padding: 1rem; margin-bottom: 7%; background: #e4e4e4; color: #444444; font-family: Roboto; line-height: 1.4; text-shadow: 0 1px 0 #ffffff;}
+body {font-size: 14pt; padding: 1rem; margin-bottom: 7%; background: #e4e4e4; color: #444444; font-family: Roboto; line-height: 1.4; text-shadow: 0 1px 0 #ffffff;}
 .quote-text {text-indent: 3rem;}
 
 .intro-text {
@@ -9,6 +9,10 @@ body {font-size: 16pt; padding: 1rem; margin-bottom: 7%; background: #e4e4e4; co
 
 h1 {
   font-size: 22pt;
+}
+
+h2 {
+  font-size: 18pt;
 }
 
 .essay-p {
@@ -28,12 +32,32 @@ img {
   width: 100%;
 }
 
+.ty-mw2 {
+  width: 275px;
+}
+
 figure {
   text-align: center;
 }
 
 .smosh-gif {
   margin-bottom: 20px;
+}
+
+a {
+  font-style: none;
+  text-decoration: none;
+}
+
+figcaption {
+  font-style: italic;
+  font-size: 12pt;
+}
+
+.essay-title {
+  line-height: 7px;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
 }
 
 /* Media query for screens with a width greater than or equal to 768px (adjust the value as needed) */
