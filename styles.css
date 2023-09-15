@@ -31,3 +31,27 @@ li {
     max-width: 40%; /* Set the maximum width to 73% */
   }
 }
+
+figure{
+  float: right;
+  margin: 0 5px 0 20px;
+  font-style: italic;
+  font-size: 12pt;
+}
+
+.best-friend {
+  float: left;
+  width: 40%;
+  margin: 0 20px 0 0;
+  font-size: 12pt;
+}
+
+img {
+  width: 98%;
+  float: right;
+  margin: 0 5px 30px 20px;
+}
+
+.ty-mw2 {
+  margin-bottom: 15px;
+}
