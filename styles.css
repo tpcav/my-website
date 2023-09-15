@@ -33,13 +33,14 @@ li {
 }
 
 figure{
+  width: 50%;
   float: right;
   margin: 0 5px 0 20px;
   font-style: italic;
   font-size: 12pt;
 
 .ty-tom-reviews {
-  width: 40%;
+  width: 90%;
 }
 
 .best-friend {
