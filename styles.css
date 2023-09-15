@@ -34,15 +34,9 @@ li {
 
 figure{
   float: right;
-  width: 50%;
   margin: 0 5px 0 20px;
   font-style: italic;
-  font-size: 12pt;
-}
-
-video {
-  width: 40; 
-}
+  font-size: 
 
 .ty-tom-reviews {
   width: 40%;
