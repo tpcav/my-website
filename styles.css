@@ -9,7 +9,7 @@ body {font-size: 14pt; padding: 1rem; margin-bottom: 7%; background: #e4e4e4; co
 }
 
 .smosh-gif {
-  width: 350px;
+  width: 100%;
 }
 
 h1 {
@@ -104,11 +104,11 @@ hr {
 }
 
 .yucky-bts {
-  width: 325px;
+  width: 100%;
 }
 
 .cali-abbatia {
-  width: 275px;
+  width: 90%;
 }
 
 /* Media query for screens with a width greater than or equal to 768px (adjust the value as needed) */
